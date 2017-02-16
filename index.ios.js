@@ -4,10 +4,11 @@
  * @flow
  */
 
- import React, {
-   AppRegistry,
- } from 'react-native';
+import React, { Component } from 'react';
+import {
+  AppRegistry,
+} from 'react-native';
 
- import FeInnApp from './src/container/app';
+import Root from './App/root';
 
- AppRegistry.registerComponent('FeInn', () => FeInnApp);
+AppRegistry.registerComponent('tabbarcontroller', () => Root);
