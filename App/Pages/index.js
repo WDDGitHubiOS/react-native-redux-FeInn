@@ -19,12 +19,12 @@ import * as actions from '../Actions/actionFuns';
 
 export default class IndexPage extends Component{
     render(){
-        const {dispatch,TabBarIndex} = this.props;
+        const {dispatch,TabBarInfo} = this.props;
 
         return(
             <TabNavigator>
                 <TabNavigator.Item
-                    selected={TabBarIndex.currentPage === 'home'}
+                    selected={TabBarInfo.currentPage === 'home'}
                     renderIcon={() => <Image style={styles.tarBarImage} source={require('../Images/home.png')} />}
                     renderSelectedIcon={() => <Image style={styles.tarBarImage} source={require('../Images/home_active.png')} />}
                     badgeText="1"
@@ -32,15 +32,15 @@ export default class IndexPage extends Component{
                     {<HomePage />}
                 </TabNavigator.Item>
                 <TabNavigator.Item
-                selected={TabBarIndex.currentPage === 'read'}
-                renderIcon={() => <Image style={styles.tarBarImage} source={require('../Images/reading.png')} />}
-                renderSelectedIcon={() => <Image style={styles.tarBarImage} source={require('../Images/reading_active.png')} />}
-                onPress={() => dispatch(actions.changTabVc('read'))}>
-                {<ReadPage />}
+                    selected={TabBarInfo.currentPage === 'read'}
+                    renderIcon={() => <Image style={styles.tarBarImage} source={require('../Images/reading.png')} />}
+                    renderSelectedIcon={() => <Image style={styles.tarBarImage} source={require('../Images/reading_active.png')} />}
+                    onPress={() => dispatch(actions.changTabVc('read'))}>
+                    {<ReadPage />}
                 </TabNavigator.Item>
 
                 <TabNavigator.Item
-                    selected={TabBarIndex.currentPage === 'music'}
+                    selected={TabBarInfo.currentPage === 'music'}
                     renderIcon={() => <Image style={styles.tarBarImage} source={require('../Images/music.png')} />}
                     renderSelectedIcon={() => <Image style={styles.tarBarImage} source={require('../Images/music_active.png')} />}
                     onPress={() => dispatch(actions.changTabVc('music'))}>
@@ -48,7 +48,7 @@ export default class IndexPage extends Component{
                 </TabNavigator.Item>
 
                 <TabNavigator.Item
-                    selected={TabBarIndex.currentPage === 'movie'}
+                    selected={TabBarInfo.currentPage === 'movie'}
                     renderIcon={() => <Image style={styles.tarBarImage} source={require('../Images/movie.png')} />}
                     renderSelectedIcon={() => <Image style={styles.tarBarImage} source={require('../Images/movie_active.png')} />}
                     onPress={() => dispatch(actions.changTabVc('movie'))}>
